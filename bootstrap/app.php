@@ -25,8 +25,8 @@ $container['view'] = function($container) {
 
 	// add twig extension
 	$view->addExtension(new \Slim\Views\TwigExtension(
-		$container->router, // generate URL for links within views using $container
-		$container->request->getUri() // current 'request' of the page
+		$container->router,						// generate URL for links within views using $container
+		$container->request->getUri()	// current 'request' of the page
 	));
 
 	return $view;
