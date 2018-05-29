@@ -19,7 +19,7 @@ $container = $app->getContainer();
 $container['view'] = function($container) {
 
 	// define path to render 'view'
-	$view = new \Slim\View\Twig('../resources/view', [
+	$view = new \Slim\Views\Twig('../resources/views', [
 		'cache'	=>	false // turn off caching of view
 	]);
 
