@@ -12,3 +12,25 @@ $app = new \Slim\App([
 		'displayErrorDetails'	=>	true
 	]
 ]);
+
+// create container
+$container = $app->getContainer();
+
+$container['view'] = function($container) {
+
+	// define path to render 'view'
+	$view = new \Slim\View\Twig('../resources/view', [
+		'cache'	=>	false // turn off caching of view
+	]);
+
+	// add twig extension
+	$view->addExtension(new \Slim\Views\TwigExtension(
+		$container->router, // generate URL for links within views using $container
+		$container->request->getUri() // current 'request' of the page
+	));
+
+	return $view;
+};
+
+// require routes file
+require_once '../app/routes.php';
