@@ -6,4 +6,9 @@ session_start();
 require_once '../vendor/autoload.php';
 
 // create instance of Slim
-$app = new \Slim\App();
+// set display errors
+$app = new \Slim\App([
+	'settings'	=>	[
+		'displayErrorDetails'	=>	true
+	]
+]);
