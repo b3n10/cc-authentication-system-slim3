@@ -19,6 +19,7 @@ $container = $app->getContainer();
 $container['view'] = function($container) {
 
 	// define path to render 'view'
+	// create $view as Twig obj
 	$view = new \Slim\Views\Twig('../resources/views', [
 		'cache'	=>	false // turn off caching of view
 	]);
@@ -29,6 +30,7 @@ $container['view'] = function($container) {
 		$container->request->getUri()	// current 'request' of the page
 	));
 
+	// return the Twig obj
 	return $view;
 };
 
