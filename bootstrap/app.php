@@ -8,27 +8,31 @@ require_once '../vendor/autoload.php';
 // create instance of Slim
 $app = new \Slim\App([
 
-	// set display errors
 	'settings'	=>	[
-		'displayErrorDetails'	=>	true
-	],
 
-	// add db config
-	'db'				=>	[
-		'driver'		=>	'mysql',
-		'host'			=>	'localhost',
-		'database'	=>	'authentication_system',
-		'username'	=>	'root',
-		'password'	=>	'jairah',
-		'charset'		=>	'utf8',
-		'collation'	=>	'utf8_unicode_ci',
-		'prefix'		=>	''
+		// display errors
+		'displayErrorDetails'	=>	true,
+
+		// add db config
+		'db'				=>	[
+			'driver'		=>	'mysql',
+			'host'			=>	'localhost',
+			'database'	=>	'authentication_system',
+			'username'	=>	'root',
+			'password'	=>	'jairah',
+			'charset'		=>	'utf8',
+			'collation'	=>	'utf8_unicode_ci',
+			'prefix'		=>	''
+		]
+
 	]
 
 ]);
 
 // create container
 $container = $app->getContainer();
+
+
 
 // create 'view' property in $container which is a callback
 $container['view'] = function($container) {
