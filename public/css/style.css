@@ -1,0 +1,20 @@
+/*  https://css-tricks.com/centering-list-items-horizontally-slightly-trickier-than-you-might-think */
+
+.main-menu {
+	float: left;
+}
+.main-menu ul {
+	text-align: center;
+}
+.main-menu ul li {
+	display: inline-block;
+}
+
+.user-menu {
+	float: right;
+	margin-right: 200px;
+}
+
+.container {
+	clear: both;
+}
