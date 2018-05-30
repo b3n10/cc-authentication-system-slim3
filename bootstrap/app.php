@@ -32,9 +32,7 @@ $app = new \Slim\App([
 // create container
 $container = $app->getContainer();
 
-
-
-// create 'view' property in $container which is a callback
+// create 'view' property in $container which is a anonymous
 $container['view'] = function($container) {
 
 	// create instance of Twig obj as $view
@@ -63,7 +61,7 @@ $container['view'] = function($container) {
 };
 
 // create 'HomeController' property
-// callback function is to instantiate a HomeController obj
+// anonymous function is to instantiate a HomeController obj
 $container['HomeController'] = function($container) {
 
 	// pass $container on HomeController obj
