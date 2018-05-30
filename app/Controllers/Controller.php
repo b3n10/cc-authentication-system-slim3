@@ -15,4 +15,15 @@ class Controller {
 
 	}
 
+	public function __get($property) {
+
+		// check if $property exists on $container obj
+		if ($this->container->{$property}) {
+
+			return $this->container->{$property};
+
+		}
+
+	}
+
 }
