@@ -32,6 +32,23 @@ $app = new \Slim\App([
 // create container
 $container = $app->getContainer();
 
+// create instance of Capsule Manager as $capsule obj
+$capsule = new \Illuminate\Database\Capsule\Manager;
+
+// add connection using db config in settings
+$capsule->addConnection($container['settings']['db']);
+
+$capsule->setAsGlobal();
+
+$capsule->bootEloquent();
+
+// create 'db' property
+$container['db'] = function($container) use ($capsule) {
+
+	return $capsule;
+
+};
+
 // create 'view' property in $container which is a anonymous
 $container['view'] = function($container) {
 
