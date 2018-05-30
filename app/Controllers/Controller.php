@@ -5,4 +5,14 @@
 namespace App\Controllers;
 
 class Controller {
+
+	protected $container;
+
+	// accept the $container obj
+	public function __construct($container) {
+
+		$this->container = $container;
+
+	}
+
 }
