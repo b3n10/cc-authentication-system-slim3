@@ -6,11 +6,25 @@ session_start();
 require_once '../vendor/autoload.php';
 
 // create instance of Slim
-// set display errors
 $app = new \Slim\App([
+
+	// set display errors
 	'settings'	=>	[
 		'displayErrorDetails'	=>	true
+	],
+
+	// add db config
+	'db'				=>	[
+		'driver'		=>	'mysql',
+		'host'			=>	'localhost',
+		'database'	=>	'authentication_system',
+		'username'	=>	'root',
+		'password'	=>	'jairah',
+		'charset'		=>	'utf8',
+		'collation'	=>	'utf8_unicode_ci',
+		'prefix'		=>	''
 	]
+
 ]);
 
 // create container
