@@ -19,20 +19,29 @@ $container = $app->getContainer();
 // create 'view' index in $container and add a callback
 $container['view'] = function($container) {
 
+	// create instance of Twig obj as $view
 	// define path to render 'view'
-	// create $view as Twig obj
 	$view = new \Slim\Views\Twig('../resources/views', [
-		'cache'	=>	false // turn off caching of view
+
+		// turn off caching of view
+		'cache'	=>	false
+
 	]);
 
 	// add twig extension
 	$view->addExtension(new \Slim\Views\TwigExtension(
-		$container->router,						// generate URL for links within views using $container
-		$container->request->getUri()	// current 'request' of the page
+
+		// this will generate URL for links within views using $container obj
+		$container->router,
+
+		// current 'request' of the page
+		$container->request->getUri()
+
 	));
 
 	// return the Twig obj
 	return $view;
+
 };
 
 // require routes file
