@@ -44,5 +44,14 @@ $container['view'] = function($container) {
 
 };
 
+// create 'HomeController' index
+// callback function is to instantiate a HomeController obj
+$container['HomeController'] = function($container) {
+
+	// pass $container on HomeController obj
+	return new \App\Controllers\HomeController($container);
+
+};
+
 // require routes file
 require_once '../app/routes.php';
