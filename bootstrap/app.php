@@ -16,7 +16,7 @@ $app = new \Slim\App([
 // create container
 $container = $app->getContainer();
 
-// create 'view' index in $container and add a callback
+// create 'view' property in $container which is a callback
 $container['view'] = function($container) {
 
 	// create instance of Twig obj as $view
@@ -44,7 +44,7 @@ $container['view'] = function($container) {
 
 };
 
-// create 'HomeController' index
+// create 'HomeController' property
 // callback function is to instantiate a HomeController obj
 $container['HomeController'] = function($container) {
 
