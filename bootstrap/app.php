@@ -16,6 +16,7 @@ $app = new \Slim\App([
 // create container
 $container = $app->getContainer();
 
+// create 'view' index in $container
 $container['view'] = function($container) {
 
 	// define path to render 'view'
