@@ -18,4 +18,5 @@
 // e.g. $obj = new \App\Controllers\ClassName;
 namespace App\Controllers;
 
-
+class HomeController {
+}
