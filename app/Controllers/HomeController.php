@@ -18,11 +18,15 @@
 // e.g. $obj = new \App\Controllers\ClassName;
 namespace App\Controllers;
 
-class HomeController {
+// inherit from base Controller
+class HomeController extends Controller {
 
 	public function index($request, $response) {
 
-		return 'Home Controller';
+		// view is inaccessible or undefined property in HomeController
+		// so it will call magic method __get (defined in base Controller) passing view as param
+		// and so view will be the Twig obj which has the render method
+		return $this->view->render($response, 'home.twig');
 
 	}
 
