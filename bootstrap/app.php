@@ -86,5 +86,13 @@ $container['HomeController'] = function($container) {
 
 };
 
+// Add 'AuthController' property
+$container['AuthController'] = function($container) {
+
+	// pass $container on HomeController obj
+	return new \App\Controllers\Auth\AuthController($container);
+
+};
+
 // require routes file
 require_once '../app/routes.php';
