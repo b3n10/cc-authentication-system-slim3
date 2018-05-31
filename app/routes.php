@@ -5,3 +5,6 @@
 // which returns a HomeController obj
 // then run the index method to the requested URI ('/home')
 $app->get('/home', 'HomeController:index');
+
+// only setName once
+$app->get('/auth/signup', 'AuthController:getSignUp')->setName('auth.signup');
