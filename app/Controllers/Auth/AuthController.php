@@ -1,14 +1,15 @@
 <?php
 
-namespace App\Controllers\AuthController;
+namespace App\Controllers\Auth;
 
-use  App\Controllers\Controller;
+use App\Controllers\Controller;
 
 class AuthController extends Controller {
 
 	public function getSignUp($request, $response) {
 
-		$this->view->render($response, 'signup.twig');
+		// add dir 'auth' before twig file
+		$this->view->render($response, 'auth/signup.twig');
 
 	}
 
