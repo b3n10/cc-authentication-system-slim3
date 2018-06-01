@@ -4,7 +4,7 @@
 // so it will run the function for $container['HomeController']
 // which returns a HomeController obj
 // then run the index method to the requested URI ('/home')
-$app->get('/home', 'HomeController:index');
+$app->get('/home', 'HomeController:index')->setName('home');
 
 // only setName once for the URI
 $app->get('/auth/signup', 'AuthController:getSignUp')->setName('auth.signup');
