@@ -6,7 +6,7 @@
 // then run the index method to the requested URI ('/home')
 $app->get('/home', 'HomeController:index');
 
-// only setName once
+// only setName once for the URI
 $app->get('/auth/signup', 'AuthController:getSignUp')->setName('auth.signup');
 
-$app->post('/auth/signup', 'AuthController:getSignUp');
+$app->post('/auth/signup', 'AuthController:postSignUp');
