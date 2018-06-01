@@ -22,11 +22,18 @@ class AuthController extends Controller {
 
 	public function postSignUp($request, $response) {
 
-		$this->validator->validate($request, [
+		// validate the inputs
+		// then pass the Validator obj to $validation
+		// which will have the failed method
+		$validation = $this->validator->validate($request, [
 			'name'			=>	v::notEmpty()->alpha(),
 			'email'			=>	v::noWhitespace()->notEmpty(),
 			'password'	=>	v::noWhitespace()->notEmpty()
 		]);
+
+		if ($validation->failed()) {
+			die('errors');
+		}
 
 		// inset to db
 		User::create([
