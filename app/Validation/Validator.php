@@ -2,4 +2,6 @@
 
 namespace App\Validation;
 
-use Respect\Validation\Validator as Respect;
+class Validator {
+
+}
