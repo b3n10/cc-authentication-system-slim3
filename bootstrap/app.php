@@ -94,5 +94,10 @@ $container['AuthController'] = function($container) {
 
 };
 
+// Add 'validator' property
+$container['validator'] = function() {
+	return new \App\Validation\Validator;
+};
+
 // require routes file
 require_once '../app/routes.php';
