@@ -20,6 +20,11 @@ class AuthController extends Controller {
 	public function postSignUp($request, $response) {
 
 		// inset to db
+		User::create([
+			'name'			=>	$request->getParam('name'),
+			'email'			=>	$request->getParam('email'),
+			'password'	=>	password_hash($request->getParam('password'), PASSWORD_DEFAULT)
+		]);
 
 	}
 
