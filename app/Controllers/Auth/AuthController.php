@@ -13,6 +13,12 @@ class AuthController extends Controller {
 
 	}
 
+	public function postSignUp($request, $response) {
+
+		//
+
+	}
+
 }
 
 
