@@ -13,7 +13,7 @@ class AuthController extends Controller {
 	public function getSignUp($request, $response) {
 
 		// add dir 'auth' before twig file
-		$this->view->render($response, 'auth/signup.twig');
+		return $this->view->render($response, 'auth/signup.twig');
 
 	}
 
@@ -25,6 +25,9 @@ class AuthController extends Controller {
 			'email'			=>	$request->getParam('email'),
 			'password'	=>	password_hash($request->getParam('password'), PASSWORD_DEFAULT)
 		]);
+
+		// redirect to the URI using the name of it's 'router
+		return $response->withRedirect($this->router->pathFor('home'));
 
 	}
 
