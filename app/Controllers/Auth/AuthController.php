@@ -8,6 +8,9 @@ use App\Controllers\Controller;
 // include User class
 use App\Models\User;
 
+// inclue Validator class
+use Respect\Validation\Validator as v;
+
 class AuthController extends Controller {
 
 	public function getSignUp($request, $response) {
@@ -18,6 +21,12 @@ class AuthController extends Controller {
 	}
 
 	public function postSignUp($request, $response) {
+
+		$this->validator->validate($request, [
+			'name'			=>	v::notEmpty()->alpha(),
+			'email'			=>	v::noWhitespace()->notEmpty(),
+			'password'	=>	v::noWhitespace()->notEmpty()
+		]);
 
 		// inset to db
 		User::create([
