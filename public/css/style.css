@@ -1,5 +1,9 @@
 /*  https://css-tricks.com/centering-list-items-horizontally-slightly-trickier-than-you-might-think */
+* {
+	box-sizing: border-box;
+}
 
+/* navigation */
 .main-menu {
 	float: left;
 }
@@ -17,4 +21,36 @@
 
 .container {
 	clear: both;
+}
+
+/* form input */
+.div-signup {
+	max-width: 480px;
+	margin: 0 auto;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-family: sans-serif;
+}
+.div-signup span {
+	display: block;
+	padding: 7px;
+	background: #ccc;
+}
+div.form-group {
+	padding: 7px 5px;
+}
+.div-signup label {
+	display: block;
+	font-weight: 900;
+}
+.div-signup input {
+	font-size: 1em;
+	padding: 5px 5px;
+	width: 100%;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+.div-signup button {
+	font-size: 0.8em;
+	padding: 5px;
 }
