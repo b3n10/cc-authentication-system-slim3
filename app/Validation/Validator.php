@@ -35,4 +35,11 @@ class Validator {
 
 	}
 
+	public function failed() {
+
+		// check if $errors is empty
+		return !$this->errors;
+
+	}
+
 }
