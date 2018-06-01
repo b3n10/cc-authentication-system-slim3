@@ -8,3 +8,5 @@ $app->get('/home', 'HomeController:index');
 
 // only setName once
 $app->get('/auth/signup', 'AuthController:getSignUp')->setName('auth.signup');
+
+$app->post('/auth/signup', 'AuthController:getSignUp');
