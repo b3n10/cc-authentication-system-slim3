@@ -3,7 +3,7 @@
 {% block content %}
 	<div class="div-signup">
 		<span>Sign Up</span>
-		<form class="form-signup" action="{{ path_for('auth.signup') }}" method="POST">
+		<form class="form-signup" action="{{ path_for('auth.signup') }}" method="POST" autocomplete="off">
 			<div class="form-group">
 				<input id="name" type="text" name="name" placeholder="Firstname Lastname">
 			</div>
