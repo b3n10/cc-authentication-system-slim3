@@ -8,7 +8,7 @@ class ValidationErrorsMiddleware extends Middleware {
 	public function __invoke($request ,$response, $next_callable_middleware) {
 
 		// attach $_SESSION['errors'] to global as errors passed to views (*.twig)
-		$this->container->view->getEnvironment()->addGlobal('errors', $_SESSION['errors']);
+		$this->container->view->getEnvironment()->addGlobal('errors', isset($_SESSION['errors']) ? $_SESSION['errors'] : '');
 
 		// session not needed so remove it
 		unset($_SESSION['errors']);
