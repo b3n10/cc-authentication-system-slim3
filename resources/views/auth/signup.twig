@@ -7,14 +7,14 @@
 			<form class="form-signup" action="{{ path_for('auth.signup') }}" method="POST" autocomplete="off">
 				<div class="form-group {{ errors.name ? 'has-errors' : '' }}">
 					<label for="name">Name</label>
-					<input id="name" type="text" name="name">
+					<input id="name" type="text" name="name" value="{{ inputs.name }}">
 					{% if errors.name %}
 						<span class="errors">{{ errors.name | first }}</span>
 					{% endif %}
 				</div>
 				<div class="form-group {{ errors.email ? 'has-errors' : '' }}">
 					<label for="email">E-mail</label>
-					<input id="email" type="email" name="email" placeholder="email@domain.com">
+					<input id="email" type="email" name="email" placeholder="email@domain.com" value="{{ inputs.email }}">
 					{% if errors.email %}
 						<span class="errors">{{ errors.email | first }}</span>
 					{% endif %}
