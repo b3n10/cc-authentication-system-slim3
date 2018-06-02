@@ -103,5 +103,7 @@ $container['validator'] = function() {
 // and pass $container because base class Middleware requires it on it's constructor
 $app->add(new \App\Middleware\ValidationErrorsMiddleware($container));
 
+$app->add(new \App\Middleware\SubmittedInputMiddleware($container));
+
 // require routes file
 require_once '../app/routes.php';
