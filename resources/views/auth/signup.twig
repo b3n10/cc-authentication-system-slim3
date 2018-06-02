@@ -9,21 +9,21 @@
 					<label for="name">Name</label>
 					<input id="name" type="text" name="name">
 					{% if errors.name %}
-						<span>{{ errors.name | first }}</span>
+						<span class="errors">{{ errors.name | first }}</span>
 					{% endif %}
 				</div>
 				<div class="form-group">
 					<label for="email">E-mail</label>
 					<input id="email" type="email" name="email" placeholder="email@domain.com">
 					{% if errors.email %}
-						<span>{{ errors.email | first }}</span>
+						<span class="errors">{{ errors.email | first }}</span>
 					{% endif %}
 				</div>
 				<div class="form-group">
 					<label for="password">Password</label>
 					<input id="password" type="password" name="password">
 					{% if errors.password %}
-						<span>{{ errors.password | first }}</span>
+						<span class="errors">{{ errors.password | first }}</span>
 					{% endif %}
 				</div>
 				<div class="form-group">
