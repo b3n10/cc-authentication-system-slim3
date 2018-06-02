@@ -30,6 +30,9 @@ class Validator {
 
 		}
 
+		// to persist errors is by storing them in $_SESSION
+		$_SESSION['errors'] = $this->errors;
+
 		// return the Validator obj
 		return $this;
 
