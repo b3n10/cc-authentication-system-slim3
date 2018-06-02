@@ -7,6 +7,8 @@
 $app->get('/home', 'HomeController:index')->setName('home');
 
 // only setName once for the URI
+// if URI is accessed
 $app->get('/auth/signup', 'AuthController:getSignUp')->setName('auth.signup');
 
+// if form is submitted
 $app->post('/auth/signup', 'AuthController:postSignUp');
