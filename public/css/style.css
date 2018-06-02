@@ -63,6 +63,10 @@ div.form-group {
 	cursor: pointer;
 }
 
+div.has-errors input {
+	border: 1px solid #Ff4c4c;
+}
+
 span.errors {
 	display: block;
 	background: #fff;
