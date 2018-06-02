@@ -26,8 +26,12 @@ class AuthController extends Controller {
 		// then pass the Validator obj to $validation
 		// which will have the failed method
 		$validation = $this->validator->validate($request, [
+			// notEmpty:			should not be empty
+			// alpha:					should only be alphabet letters
+			// noWhitespace:	no spaces/tabs
+			// email:					should be valid email format
 			'name'			=>	v::notEmpty()->alpha(),
-			'email'			=>	v::noWhitespace()->notEmpty(),
+			'email'			=>	v::noWhitespace()->notEmpty()->email(),
 			'password'	=>	v::noWhitespace()->notEmpty()
 		]);
 
