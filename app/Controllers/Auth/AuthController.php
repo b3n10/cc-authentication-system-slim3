@@ -32,7 +32,7 @@ class AuthController extends Controller {
 		]);
 
 		if ($validation->failed()) {
-			// redirect to sign up page
+			// if errors, redirect to sign up page
 			return $response->withRedirect($this->router->pathFor('auth.signup'));
 		}
 
