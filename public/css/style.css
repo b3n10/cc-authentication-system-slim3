@@ -62,3 +62,10 @@ div.form-group {
 	background: #e8e8e8;
 	cursor: pointer;
 }
+
+span.errors {
+	display: block;
+	background: #fff;
+	padding: 2px;
+	color: #Ff4c4c;
+}
