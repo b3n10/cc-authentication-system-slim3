@@ -32,7 +32,8 @@ class AuthController extends Controller {
 		]);
 
 		if ($validation->failed()) {
-			die('errors');
+			// redirect to sign up page
+			return $response->withRedirect($this->router->pathFor('auth.signup'));
 		}
 
 		// inset to db
