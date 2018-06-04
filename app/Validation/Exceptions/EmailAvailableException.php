@@ -2,6 +2,9 @@
 
 namespace App\Validation\Exceptions;
 
-class EmailAvailableException {
+// include ValidationException class
+use Respect\Validation\Exceptions\ValidationException;
+
+class EmailAvailableException extends ValidationException {
 
 }
