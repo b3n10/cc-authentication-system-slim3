@@ -8,11 +8,18 @@ namespace App\Validation\Rules;
 // include AbstractRule class
 use Respect\Validation\Rules\AbstractRule;
 
+// include Users class which extends Illuminate for db
+use App\Models\User as u;
+
 class EmailAvailable extends AbstractRule {
 
+	// purpose is to return true or false for checking
 	public function validate($input) {
 
-		return false;
+		// check if $input matches selected 'email'
+		// 0: no match, so return true
+		// otherwise false
+		return u::where('email', $input)->count() === 0;
 
 	}
 
