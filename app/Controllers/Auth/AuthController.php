@@ -30,7 +30,7 @@ class AuthController extends Controller {
 			// alpha:						should only be alphabet letters
 			// noWhitespace:		no spaces/tabs
 			// email:						should be valid email format
-			// emailAvailable:	not a method from a class, but the name of the class itself (from v::with('path') in bootstrap.php)
+			// emailAvailable:	will look a class with same name in v::with('path') from bootstrap.php and run validate method
 			'name'			=>	v::notEmpty()->alpha(),
 			'email'			=>	v::noWhitespace()->notEmpty()->email()->emailAvailable(),
 			'password'	=>	v::noWhitespace()->notEmpty()
