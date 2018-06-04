@@ -105,5 +105,11 @@ $app->add(new \App\Middleware\ValidationErrorsMiddleware($container));
 
 $app->add(new \App\Middleware\SubmittedInputMiddleware($container));
 
+// include Validator class
+use Respect\Validation\Validator as v;
+
+// load classes of validation rules by passing the path
+v::with('App\\Validation\\Rules');
+
 // require routes file
 require_once '../app/routes.php';
