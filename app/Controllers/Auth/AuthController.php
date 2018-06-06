@@ -13,6 +13,22 @@ use Respect\Validation\Validator as v;
 
 class AuthController extends Controller {
 
+	/* signin page */
+	public function getSignIn($request, $response) {
+
+		// add dir 'auth' before twig file
+		return $this->view->render($response, 'auth/signin.twig');
+
+	}
+
+	public function postSignUp($request, $response) {
+
+		//
+
+	}
+
+
+	/* signup page */
 	public function getSignUp($request, $response) {
 
 		// add dir 'auth' before twig file
