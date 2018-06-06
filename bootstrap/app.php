@@ -104,6 +104,11 @@ $container['csrf'] = function() {
 	return new \Slim\Csrf\Guard;
 };
 
+// attach auth to $container
+$container['auth'] = function() {
+	return new \App\Auth\Auth;
+};
+
 // add Middleware instances to all routes
 // and pass $container because base class Middleware requires it on it's constructor
 $app->add(new \App\Middleware\ValidationErrorsMiddleware($container));
