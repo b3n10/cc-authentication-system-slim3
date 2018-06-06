@@ -21,7 +21,7 @@ class AuthController extends Controller {
 
 	}
 
-	public function postSignUp($request, $response) {
+	public function postSignIn($request, $response) {
 
 		//
 
