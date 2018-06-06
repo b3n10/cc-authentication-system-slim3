@@ -10,7 +10,7 @@ class Auth {
 	public function attempt($email, $password) {
 
 		// grab user email
-		$user = u::find('email', $email)->first();
+		$user = u::where('email', $email)->first();
 
 		// if no result for $user
 		if (!$user) {
