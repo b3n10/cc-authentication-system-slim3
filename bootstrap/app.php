@@ -99,11 +99,18 @@ $container['validator'] = function() {
 	return new \App\Validation\Validator;
 };
 
-// add a Middleware instance to all routes
+// attach slim/csrf to $container
+$container['csrf'] = function() {
+	return new \Slim\Csrf\Guard;
+};
+
+// add Middleware instance to all routes
 // and pass $container because base class Middleware requires it on it's constructor
 $app->add(new \App\Middleware\ValidationErrorsMiddleware($container));
-
 $app->add(new \App\Middleware\SubmittedInputMiddleware($container));
+
+// add csrf to all routes
+$app->add($container->csrf);
 
 // include Validator class
 use Respect\Validation\Validator as v;
