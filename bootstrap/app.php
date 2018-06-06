@@ -99,7 +99,7 @@ $container['validator'] = function() {
 	return new \App\Validation\Validator;
 };
 
-// add a Middleware instance to Slim $app
+// add a Middleware instance to all routes
 // and pass $container because base class Middleware requires it on it's constructor
 $app->add(new \App\Middleware\ValidationErrorsMiddleware($container));
 
