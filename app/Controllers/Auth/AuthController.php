@@ -15,9 +15,6 @@ class AuthController extends Controller {
 
 	public function getSignUp($request, $response) {
 
-		// csrf_value is from $this->csrf->getTokenValueNameKey()
-		$request->getAttribute('csrf_value');
-
 		// add dir 'auth' before twig file
 		return $this->view->render($response, 'auth/signup.twig');
 
