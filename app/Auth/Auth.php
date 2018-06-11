@@ -7,6 +7,19 @@ use App\Models\User as u;
 
 class Auth {
 
+	public function user() {
+
+		// get user by 'userid'
+		return u::find($_SESSION['userid']);
+
+	}
+
+	public function check() {
+
+		// if userid is on Session
+		return isset($_SESSION['userid']);
+	}
+
 	public function attempt($email, $password) {
 
 		// grab user email
