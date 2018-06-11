@@ -17,3 +17,6 @@ $app->post('/auth/signup', 'AuthController:postSignUp');
 /* routes for signin page */
 $app->get('/auth/signin', 'AuthController:getSignIn')->setName('auth.signin');
 $app->post('/auth/signin', 'AuthController:postSignIn');
+
+/* route for signout page */
+$app->get('/auth/signout', 'AuthController:getSignOut')->setName('auth.signout');
