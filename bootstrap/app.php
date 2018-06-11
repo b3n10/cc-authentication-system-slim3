@@ -54,6 +54,11 @@ $container['auth'] = function() {
 	return new \App\Auth\Auth;
 };
 
+// attach slim flash
+$container['flash'] = function() {
+	return new \Slim\Flash\Messages;
+}
+
 // create 'view' property in $container which is a anonymous
 $container['view'] = function($container) {
 
