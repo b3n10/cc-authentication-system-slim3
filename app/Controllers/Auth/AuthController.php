@@ -69,11 +69,17 @@ class AuthController extends Controller {
 		}
 
 		// inset to db
-		User::create([
+		$user = User::create([
 			'name'			=>	$request->getParam('name'),
 			'email'			=>	$request->getParam('email'),
 			'password'	=>	password_hash($request->getParam('password'), PASSWORD_DEFAULT)
 		]);
+
+		// sigin just like postSignIn
+		$this->auth->attempt(
+			$user->email,
+			$request->getParam('password')
+		);
 
 		// redirect to the URI using the name of it's 'router
 		return $response->withRedirect($this->router->pathFor('home'));
