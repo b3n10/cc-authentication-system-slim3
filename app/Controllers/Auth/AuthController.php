@@ -1,5 +1,9 @@
 <?php
 
+// main rule in controllers is not to invoke a php method
+// instead create a method from a different class with the php method in it
+// then create another method inside controller invoking the method from different class
+
 namespace App\Controllers\Auth;
 
 // include base class Controller
