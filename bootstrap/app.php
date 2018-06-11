@@ -49,6 +49,11 @@ $container['db'] = function($container) use ($capsule) {
 
 };
 
+// attach auth to $container
+$container['auth'] = function() {
+	return new \App\Auth\Auth;
+};
+
 // create 'view' property in $container which is a anonymous
 $container['view'] = function($container) {
 
@@ -71,6 +76,14 @@ $container['view'] = function($container) {
 		$container->request->getUri()
 
 	));
+
+	// add 'auth' as global so can be passed to views
+	// it will be an obj containing values returned by invoking methods from Auth class
+	$view->getEnvironment()->addGlobal('auth', [
+		// invoke method then pass result to 'name'
+		'check'	=>	$container->auth->check(),
+		'user'	=>	$container->auth->user()
+	]);
 
 	// return the Twig obj
 	return $view;
@@ -102,11 +115,6 @@ $container['validator'] = function() {
 // attach slim/csrf to $container
 $container['csrf'] = function() {
 	return new \Slim\Csrf\Guard;
-};
-
-// attach auth to $container
-$container['auth'] = function() {
-	return new \App\Auth\Auth;
 };
 
 // add Middleware instances to all routes
