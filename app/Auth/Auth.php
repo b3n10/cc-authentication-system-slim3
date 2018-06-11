@@ -10,7 +10,7 @@ class Auth {
 	public function user() {
 
 		// get user by 'userid'
-		return u::find($_SESSION['userid']);
+		return u::find(isset($_SESSION['userid']) ? $_SESSION['userid'] : '');
 
 	}
 
