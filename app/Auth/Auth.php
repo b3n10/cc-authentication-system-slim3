@@ -43,4 +43,11 @@ class Auth {
 
 	}
 
+	public function logout() {
+
+		// delete session
+		unset($_SESSION['userid']);
+
+	}
+
 }
