@@ -5,9 +5,13 @@
 </div>
 <div class="user-menu">
 	<ul>
+		{% if auth.check %}
+			<h2>{{ auth.user.name }}</h2>
 		<li><a href="#">Change Password</a></li>
 		<li><a href="#">Sign Out</a></li>
+		{% else %}
 		<li><a href="{{ path_for('auth.signup') }}">Sign Up</a></li>
 		<li><a href="{{ path_for('auth.signin') }}">Sign In</a></li>
+		{% endif %}
 	</ul>
 </div>
