@@ -33,6 +33,9 @@ class AuthController extends Controller {
 		);
 
 		if (!$auth) {
+			// show success message via Slim flash
+			$this->flash->addMessage('error', 'Incorrect Email/password!');
+
 			// if fail, redirect to sign in page with errors
 			return $response->withRedirect($this->router->pathFor('auth.signin'));
 		}
@@ -78,6 +81,9 @@ class AuthController extends Controller {
 			'email'			=>	$request->getParam('email'),
 			'password'	=>	password_hash($request->getParam('password'), PASSWORD_DEFAULT)
 		]);
+
+		// show success message via Slim flash
+		$this->flash->addMessage('info', 'You have successfully signed up!');
 
 		// sigin just like postSignIn
 		$this->auth->attempt(
