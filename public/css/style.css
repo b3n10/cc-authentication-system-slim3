@@ -73,3 +73,16 @@ span.errors {
 	padding: 2px;
 	color: #Ff4c4c;
 }
+
+div.alert.alert-info {
+	border: 1px solid #07C;
+	border-radius: 5px;
+	background: #7dc2f3;
+	padding: 10px;
+}
+div.alert.alert-danger {
+	border: 1px solid #e42434;
+	border-radius: 5px;
+	background: #de8c93;
+	padding: 10px;
+}
