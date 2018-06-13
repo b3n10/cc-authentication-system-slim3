@@ -59,7 +59,7 @@ $container['flash'] = function() {
 	return new \Slim\Flash\Messages;
 };
 
-// create 'view' property in $container which is a anonymous
+// create 'view' property in $container which is an anonymous function
 $container['view'] = function($container) {
 
 	// create instance of Twig obj as $view
@@ -89,6 +89,10 @@ $container['view'] = function($container) {
 		'check'	=>	$container->auth->check(),
 		'user'	=>	$container->auth->user()
 	]);
+
+	// add 'flash' as global so can be passed to views
+	// it will be an obj containing the Slim flash obj
+	$view->getEnvironment()->addGlobal('flash', $container->flash);
 
 	// return the Twig obj
 	return $view;
