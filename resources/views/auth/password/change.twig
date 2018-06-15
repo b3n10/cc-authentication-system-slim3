@@ -6,8 +6,8 @@
 		<div class="form-group">
 			<form class="form-signup" action="{{ path_for('auth.password.change') }}" method="POST" autocomplete="off">
 				<div class="form-group {{ errors.password ? 'has-errors' : '' }}">
-					<label for="password">Current Password</label>
-					<input id="password" type="password" name="password">
+					<label for="old_password">Current Password</label>
+					<input id="old_password" type="password" name="old_password">
 					{% if errors.password %}
 						<span class="errors">{{ errors.password | first }}</span>
 					{% endif %}
