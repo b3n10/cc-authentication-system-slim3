@@ -1,5 +1,7 @@
 <?php
 
+use App\Middleware\AuthMiddleware;
+
 // 'HomeController' here is a property of $container obj
 // so it will run the function for $container['HomeController']
 // which returns a HomeController obj
@@ -18,9 +20,11 @@ $app->post('/auth/signup', 'AuthController:postSignUp');
 $app->get('/auth/signin', 'AuthController:getSignIn')->setName('auth.signin');
 $app->post('/auth/signin', 'AuthController:postSignIn');
 
-/* route for signout page */
-$app->get('/auth/signout', 'AuthController:getSignOut')->setName('auth.signout');
+$app->group('', function() {
+	/* route for signout page */
+	$this->get('/auth/signout', 'AuthController:getSignOut')->setName('auth.signout');
+	/* routes for password change page */
+	$this->get('/auth/password/change', 'PasswordController:getChangePassword')->setName('auth.password.change');
+	$this->post('/auth/password/change', 'PasswordController:postChangePassword');
+})->add(new AuthMiddleware($container));
 
-/* routes for password change page */
-$app->get('/auth/password/change', 'PasswordController:getChangePassword')->setName('auth.password.change');
-$app->post('/auth/password/change', 'PasswordController:postChangePassword');
