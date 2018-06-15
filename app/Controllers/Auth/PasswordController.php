@@ -2,7 +2,7 @@
 
 namespace App\Controllers\Auth;
 
-use App\Models\User as u;
+use App\Models\User;
 use App\Controllers\Controller;
 use Respect\Validation\Validator as v;
 
@@ -13,6 +13,19 @@ class PasswordController extends Controller {
 	}
 
 	public function postChangePassword($request, $response) {
+
+		// matchPassword will create instance of MatchPassword class passing authenticated user's password to the constructor
+		// then will invoke validate method in that class
+		$validation = $this->validator->validate($request, [
+			'current_password'	=>	v::noWhitespace()->notEmpty()->matchPassword($this->auth->user()->password),
+			'password'					=>	v::noWhitespace()->notEmpty()
+		]);
+
+		if ($validation->failed()) {
+			return $response->withRedirect($this->router->pathFor('auth.password.change'));
+		}
+
+		die('success password change!');
 
 	}
 

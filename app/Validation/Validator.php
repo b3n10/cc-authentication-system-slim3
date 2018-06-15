@@ -19,7 +19,7 @@ class Validator {
 
 				// setName is just the label appended for the $rule
 				// assert will check if the $_POST['field_name'] (sent through $request) passes the $rule
-				$rule->setName(ucfirst($field_name))->assert($request->getParam($field_name));
+				$rule->setName(str_replace('_', ' ', ucfirst($field_name)))->assert($request->getParam($field_name));
 
 			} catch (NestedValidationException $e) {
 
