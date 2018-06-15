@@ -116,6 +116,14 @@ $container['AuthController'] = function($container) {
 
 };
 
+// Add 'PasswordController' property
+$container['PasswordController'] = function($container) {
+
+	// pass $container on HomeController obj
+	return new \App\Controllers\Auth\PasswordController($container);
+
+};
+
 // Add 'validator' property
 $container['validator'] = function() {
 	return new \App\Validation\Validator;
