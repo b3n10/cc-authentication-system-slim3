@@ -9,7 +9,7 @@
 
 #### Timeline:
 - Start: May 29, 2018
-- End: ?
+- End: June 16, 2018
 
 #### For redirect to work:
 - For 500 internal error, see: https://stackoverflow.com/a/31451383/6353682
