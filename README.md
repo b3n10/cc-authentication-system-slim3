@@ -29,8 +29,14 @@
 
 ```
 RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteCond %{REQUEST_FILENAME} !-f
+
+# to load css dir and not redirect to index.php
+RewriteRule ^css/ - [L,NC]
+
+RewriteCond %{REQUEST_FILENAME}% !-f
+RewriteCond %{REQUEST_FILENAME}% !-d
+
+# redirect all URI request to index.php
 RewriteRule ^ index.php [QSA,L]
 ```
 
