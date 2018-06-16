@@ -1,0 +1,88 @@
+/*  https://css-tricks.com/centering-list-items-horizontally-slightly-trickier-than-you-might-think */
+* {
+	box-sizing: border-box;
+}
+
+/* navigation */
+.main-menu {
+	float: left;
+}
+.main-menu ul {
+	text-align: center;
+}
+.main-menu ul li {
+	display: inline-block;
+}
+
+.user-menu {
+	float: right;
+	margin-right: 200px;
+}
+
+.container {
+	clear: both;
+}
+
+/* form input */
+.div-signup {
+	max-width: 480px;
+	margin: 0 auto;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-family: sans-serif;
+}
+.div-signup span {
+	display: block;
+	padding: 10px;
+	background: #ccc;
+}
+div.form-group {
+	padding: 9px 5px;
+}
+.div-signup label {
+	display: block;
+	font-weight: 900;
+	padding-bottom: 3px;
+}
+.div-signup input {
+	font-size: 1.2em;
+	padding: 5px 5px;
+	width: 100%;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+.div-signup button {
+	font-size: 1em;
+	padding: 7px 10px;
+	background: #fff;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+}
+.div-signup button:hover {
+	background: #e8e8e8;
+	cursor: pointer;
+}
+
+div.has-errors input {
+	border: 1px solid #Ff4c4c;
+}
+
+span.errors {
+	display: block;
+	background: #fff;
+	padding: 2px;
+	color: #Ff4c4c;
+}
+
+div.alert.alert-info {
+	border: 1px solid #07C;
+	border-radius: 5px;
+	background: #7dc2f3;
+	padding: 10px;
+}
+div.alert.alert-danger {
+	border: 1px solid #e42434;
+	border-radius: 5px;
+	background: #de8c93;
+	padding: 10px;
+}
