@@ -3,7 +3,7 @@
 session_start();
 
 // require all dependecies installed via composer
-require_once '../vendor/autoload.php';
+require_once './vendor/autoload.php';
 
 // create instance of Slim
 $app = new \Slim\App([
@@ -13,7 +13,6 @@ $app = new \Slim\App([
 		// display errors
 		'displayErrorDetails'	=>	true,
 
-		// add db config
 		'db'				=>	[
 			'driver'		=>	'mysql',
 			'host'			=>	'localhost',
@@ -64,7 +63,7 @@ $container['view'] = function($container) {
 
 	// create instance of Twig obj as $view
 	// define path to render 'view'
-	$view = new \Slim\Views\Twig('../resources/views', [
+	$view = new \Slim\Views\Twig('./resources/views', [
 
 		// turn off caching of view
 		'cache'	=>	false
@@ -152,4 +151,4 @@ use Respect\Validation\Validator as v;
 v::with('App\\Validation\\Rules');
 
 // require routes file
-require_once '../app/routes.php';
+require_once './app/routes.php';
